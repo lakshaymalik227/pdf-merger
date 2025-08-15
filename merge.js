@@ -4,17 +4,17 @@ const mergePdfs = async (file1, file2, useBuffer = false) => {
   const merger = new PDFMerger();
 
   if (useBuffer) {
-    // If running on Vercel (using memoryStorage)
+    // For Vercel: merge from buffers
     await merger.add(file1);
     await merger.add(file2);
     return await merger.saveAsBuffer();
   } else {
-    // Local file-based merge
+    // Local: merge from disk and save
     await merger.add(file1);
     await merger.add(file2);
     let d = new Date().getTime();
     await merger.save(`public/${d}.pdf`);
-    return d; // Return file name timestamp
+    return d;
   }
 };
 

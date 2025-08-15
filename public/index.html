@@ -8,9 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Updated CSS path -->
+  <link rel="stylesheet" href="/static/style.css">
 
   <style>
+    /* Keep your internal styles as-is */
     * {
       margin: 0;
       padding: 0;
@@ -56,43 +59,35 @@
 
     .nav-links li a:hover {
       color: #38bdf8;
-      /* light blue hover */
     }
 
     .button:hover {
       background-color: #0056b3;
-      /* Darker blue on hover */
       transform: translateY(-2px);
-      /* subtle lift effect */
     }
 
     .button:active {
       transform: translateY(0);
-      /* reset on click */
       background-color: #004080;
     }
 
     .section {
-
       padding: 60px 20px;
       text-align: center;
       line-height: 40px;
       border-radius: 12px;
       max-width: 900px;
       margin: 40px auto;
-
     }
 
     .section-title {
       font-size: 32px;
       margin-bottom: 16px;
       color: #1e293b;
-      /* Dark slate for contrast */
     }
 
     #section-description {
       font-size: 18px;
-      /* Muted slate for subtext */
       max-width: 700px;
       margin: 0 auto;
     }
@@ -101,12 +96,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
     }
 
     .button {
       background-color: #007BFF;
-      /* Primary blue */
       color: white;
       margin: 10px 10px;
       padding: 12px 24px;
@@ -119,7 +112,6 @@
 
     .about-section {
       background-color: #f1f5f9;
-      /* Light, clean background */
       padding: 60px 30px;
       max-width: 900px;
       margin: 40px auto;
@@ -132,7 +124,6 @@
       font-size: 32px;
       font-weight: 700;
       color: #1e293b;
-      /* Slate gray */
       margin-bottom: 20px;
     }
 
@@ -141,24 +132,12 @@
       font-size: 18px;
       line-height: 1.6;
       color: #475569;
-      /* Muted text for readability */
       max-width: 700px;
       margin: 0 auto 16px auto;
     }
 
     .footer {
       background-color: #1e293b;
-      /* Matches the navbar */
-      color: #ffffff;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-
-    .footer {
-      background-color: #1e293b;
-      /* Matches the navbar */
       color: #ffffff;
       text-align: center;
       padding: 20px 10px;
@@ -169,13 +148,6 @@
     .footer p {
       margin: 0;
       opacity: 0.8;
-      /* Slightly lighter text */
-    }
-
-    .footer p {
-      margin: 0;
-      opacity: 0.8;
-      /* Slightly lighter text */
     }
   </style>
 </head>
@@ -183,27 +155,29 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo"> Pdf Mergg - A Pdf Meger App</div>
+      <div class="logo">PdfMergg - A PDF Merger App</div>
       <div>
         <ul class="nav-links">
           <li><a href="/" id="home">Home</a></li>
           <li><a href="#About">About</a></li>
-          <li><a href="#Contact Me">Contact Me</a></li>
+          <li><a href="#Contact">Contact Me</a></li>
         </ul>
       </div>
     </nav>
   </header>
+
   <div>
     <section class="section">
-      <h1 class="section-title">PdfX - Your favorite Pdf merger tool</h1>
+      <h1 class="section-title">PdfX - Your favorite PDF merger tool</h1>
       <form method="post" action="/merge" enctype='multipart/form-data'>
         <div class="firstDivision" id="section-description">
-          <label>Select the pdf files you want to merge</label>
+          <label>Select the PDF files you want to merge</label>
           <input type="file" name="pdfs" multiple accept=".pdf">
           <input class="button" type="submit" value="Submit">
         </div>
       </form>
     </section>
+
     <section class="about-section" id="About">
       <h2 class="about-title">About Us</h2>
       <p class="about-description">
@@ -217,15 +191,16 @@
         document workflows.
       </p>
     </section>
+
     <footer class="footer">
-      <p>&copy; PdfMergg App by Lakshay Malik. All rights reserved .</p>
+      <p>&copy; PdfMergg App by Lakshay Malik. All rights reserved.</p>
     </footer>
   </div>
+
   <script>
     let home = document.querySelector("#home");
-
     home.addEventListener('click', function (e) {
-      e.preventDefault(); // stop link from navigating
+      e.preventDefault();
       alert('Choose files to merge');
     });
   </script>
