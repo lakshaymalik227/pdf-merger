@@ -11,7 +11,7 @@ const upload = multer({
   storage: isVercel ? multer.memoryStorage() : multer.diskStorage({
     destination: 'uploads/',
     filename: (req, file, cb) => {
-      cb(null, Date.now() + '-' + file.originalname);
+      cb(null, Date.now() + '-' + file.originalname); 
     }
   })
 });
